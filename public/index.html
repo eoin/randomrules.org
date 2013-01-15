@@ -6,12 +6,19 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="assets/application.css">
-  <script src="assets/application.js"></script>
 </head>
 <body>
-  <div class="canvas">
+  <div id="canvas" class="canvas">
   </div>
-  <div class="code">
-  <div/>
+  <pre id="code" class="code">
+    (function run() {
+      setTimeout(function f0() {
+        setTimeout(function f1() {
+          var v0 = "v0";
+        }, 2000);
+      }, 2000);
+    })
+  </pre>
+  <script src="assets/application.js"></script>
 </body>
 </html>
