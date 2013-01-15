@@ -1,5 +1,7 @@
 var esprima = require("./vendor/esprima");
 
+// walk the ast, allowing nodes to be transformed along the way. based
+// loosely on falafel by @substack; github.com/substack/node-falafel
 module.exports = function(source, callback) {
   var tree = esprima.parse(source, { range: true }), i, nodeSource;
   source = source.split("");

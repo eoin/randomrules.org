@@ -1,5 +1,6 @@
 var transform = require("./transform");
 
+// adds 'enter' and 'exit' tracing methods to blocks
 module.exports = function(source, enter, exit) {
   return transform(source, function(node, parent, source) {
     if (node.type === "BlockStatement") {
