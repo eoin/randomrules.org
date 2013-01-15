@@ -1,0 +1,16 @@
+.canvas {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 40%;
+}
+
+.code {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60%;
+  right: 0;
+}
