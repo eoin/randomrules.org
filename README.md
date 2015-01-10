@@ -1,2 +1,5 @@
--- randomrules.org
+## randomrules.org
 
+```
+make
+```
