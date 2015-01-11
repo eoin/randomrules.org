@@ -1,4 +1,4 @@
-JS = assets/js/vendor/jquery.js assets/js/vendor/three.js assets/js/application.js
+JS = assets/js/application.js
 CSS = assets/css/application.css
 
 public/assets/js/application.js: $(JS)
