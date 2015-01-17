@@ -1,3 +1,10 @@
+//
+// A boids implementation based on the original paper;
+//   http://www.red3d.com/cwr/papers/1987/boids.html
+// and the three.js implementation by @mrdoob;
+//   http://threejs.org/examples/canvas_geometry_birds.html
+//
+
 var windowWidth = window.innerWidth,
   windowHeight = window.innerHeight,
   halfWindowWidth = Math.floor(windowWidth / 2),
@@ -16,14 +23,14 @@ function initialize() {
   for (var i = 0; i < 200; i++) {
     boids[i] = new Boid(
       new Vector4(
-        Math.random() * 400 - 100,
-        Math.random() * 400 - 100,
-        Math.random() * 400 - 100),
+        Math.random() * 400 - 200,
+        Math.random() * 400 - 200,
+        Math.random() * 400 - 200),
       new Vector4(
         Math.random() * 2 - 1,
         Math.random() * 2 - 1,
         Math.random() * 2 - 1),
-      2, 'gray')
+      2)
   }
 }
 
@@ -45,6 +52,7 @@ function projectPosition(x, y, z) {
 function render() {
   requestAnimationFrame(render);
   context.clearRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = 'gray';
   for (var i=0; i<boids.length; i++) {
     var boid = boids[i];
     boid.update();
@@ -54,7 +62,6 @@ function render() {
     if (r <= 0) continue;
     context.beginPath();
     context.arc(a.x, a.y, r, 0, 2 * Math.PI, false);
-    context.fillStyle = boid.color;
     context.fill();
   }
 }

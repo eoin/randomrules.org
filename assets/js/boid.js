@@ -1,8 +1,7 @@
-function Boid(position, velocity, radius, color) {
+function Boid(position, velocity, radius) {
   this.position = position;
   this.velocity = velocity;
   this.radius = radius;
-  this.color = color;
   this.acceleration = new Vector4(0, 0, 0);
 }
 
