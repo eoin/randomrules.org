@@ -1,10 +1,3 @@
-//
-// A boids implementation based on the original paper;
-//   http://www.red3d.com/cwr/papers/1987/boids.html
-// and the three.js implementation by @mrdoob;
-//   http://threejs.org/examples/canvas_geometry_birds.html
-//
-
 var windowWidth = window.innerWidth,
   windowHeight = window.innerHeight,
   halfWindowWidth = Math.floor(windowWidth / 2),
