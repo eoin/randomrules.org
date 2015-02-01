@@ -1,5 +1,5 @@
 ## randomrules.org
 
 ```
-make
+lein cljsbuild auto
 ```
