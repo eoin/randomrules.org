@@ -10,13 +10,15 @@ body {
   bottom: 20px;
   right: 20px;
   padding: 10px 20px;
-  font-family: 'courier new';
+  font-family: "courier new";
   font-weight: bold;
   font-size: 1em;
   color: #444444;
 }
 
-#about a, a:visited, a:hover {
+#about a,
+a:visited,
+a:hover {
   text-decoration: underline;
   color: #444444;
 }

@@ -84,9 +84,7 @@ export class Boid {
       alignX /= count;
       alignY /= count;
       alignZ /= count;
-      var alignLen = Math.sqrt(
-        alignX * alignX + alignY * alignY + alignZ * alignZ,
-      );
+      var alignLen = Math.sqrt(alignX * alignX + alignY * alignY + alignZ * alignZ);
       if (alignLen > 0.1) {
         var s = 0.1 / alignLen;
         alignX *= s;

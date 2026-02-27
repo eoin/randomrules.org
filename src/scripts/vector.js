@@ -41,9 +41,7 @@ export class Vector4 {
   }
 
   length() {
-    return Math.sqrt(
-      this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w,
-    );
+    return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w);
   }
 
   multiplyByMatrix4(matrix4) {
