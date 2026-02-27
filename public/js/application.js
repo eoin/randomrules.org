@@ -1,3 +1,8 @@
+import { Vector4 } from "./vector.js";
+import { Matrix4 } from "./matrix.js";
+import { Grid } from "./grid.js";
+import { Boid } from "./boid.js";
+
 var lastTime = 0,
   fps = 0,
   windowWidth = window.innerWidth,
