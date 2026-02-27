@@ -1,12 +1,22 @@
 {
   "name": "randomrules.org",
-  "version": "0.0.1",
-  "description": "http://randomrules.org",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eoin/randomrules.org.git"
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "build": "vp build",
+    "preview": "vp preview",
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "prepare": "vp config"
   },
-  "dependencies": {
-    "gaze": "*"
-  }
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+    "vite-plus": "latest"
+  },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+  },
+  "packageManager": "npm@11.12.0"
 }

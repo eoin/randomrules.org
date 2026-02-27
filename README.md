@@ -1,5 +1,1 @@
 ## randomrules.org
-
-```
-make
-```
