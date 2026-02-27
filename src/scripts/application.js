@@ -3,9 +3,7 @@ import { Matrix4 } from "./matrix.js";
 import { Grid } from "./grid.js";
 import { Boid } from "./boid.js";
 
-var lastTime = 0,
-  fps = 0,
-  windowWidth = window.innerWidth,
+var windowWidth = window.innerWidth,
   windowHeight = window.innerHeight,
   halfWindowWidth = Math.floor(windowWidth / 2),
   halfWindowHeight = Math.floor(windowHeight / 2),
@@ -25,7 +23,7 @@ var lastTime = 0,
   boids = [];
 
 function initialize() {
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 500; i++) {
     boids[i] = new Boid(
       new Vector4(
         Math.random() * 400 - 200,
@@ -58,12 +56,8 @@ function projectPosition(x, y, z) {
   return position;
 }
 
-function render(now) {
+function render() {
   requestAnimationFrame(render);
-  if (lastTime) {
-    fps = 1000 / (now - lastTime);
-  }
-  lastTime = now;
   context.clearRect(0, 0, canvas.width, canvas.height);
   grid.clear();
   for (var i = 0; i < boids.length; i++) {
@@ -85,9 +79,6 @@ function render(now) {
     context.arc(a.x, a.y, r, 0, 2 * Math.PI, false);
     context.fill();
   }
-  context.fillStyle = "#444444";
-  context.font = "bold 14px 'courier new'";
-  context.fillText(Math.round(fps) + " fps", 20, 30);
 }
 
 function resize() {

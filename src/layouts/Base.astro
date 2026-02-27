@@ -1,0 +1,30 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!--
+  https://github.com/eoin/randomrules.org
+
+  A boids implementation based on the original paper;
+    http://www.red3d.com/cwr/papers/1987/boids.html
+  and the three.js implementation by @mrdoob;
+    http://threejs.org/examples/canvas_geometry_birds.html
+
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{title}</title>
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+        />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
