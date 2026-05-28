@@ -8,12 +8,14 @@ export class Boid {
   velocity: Vector4;
   radius: number;
   acceleration: Vector4;
+  color: string;
 
-  constructor(position: Vector4, velocity: Vector4, radius: number) {
+  constructor(position: Vector4, velocity: Vector4, radius: number, color: string = "gray") {
     this.position = position;
     this.velocity = velocity;
     this.radius = radius;
     this.acceleration = new Vector4(0, 0, 0);
+    this.color = color;
   }
 
   update(neighbors: Boid[]): this {

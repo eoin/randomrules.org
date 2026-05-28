@@ -17,11 +17,14 @@ var windowWidth = window.innerWidth,
   boids: Boid[] = [];
 
 function initialize() {
-  for (var i = 0; i < 500; i++) {
+  var count = 1000;
+  for (var i = 0; i < count; i++) {
+    var hue = (i / count) * 360;
     boids[i] = new Boid(
       new Vector4(Math.random() * 400 - 200, Math.random() * 400 - 200, Math.random() * 400 - 200),
       new Vector4(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1),
       2,
+      "hsl(" + hue + ", 80%, 75%)",
     );
   }
 }
@@ -47,7 +50,6 @@ function render() {
   for (var i = 0; i < boids.length; i++) {
     grid.insert(boids[i]);
   }
-  context.fillStyle = "gray";
   for (var i = 0; i < boids.length; i++) {
     var boid = boids[i];
     boid.update(grid.getNeighborCells(boid));
@@ -55,6 +57,7 @@ function render() {
     var b = projectPosition(boid.position.x + boid.radius, boid.position.y, boid.position.z);
     var r = b.x - a.x;
     if (r <= 0) continue;
+    context.fillStyle = boid.color;
     context.beginPath();
     context.arc(a.x, a.y, r, 0, 2 * Math.PI, false);
     context.fill();
